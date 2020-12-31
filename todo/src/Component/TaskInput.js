@@ -7,7 +7,7 @@ export default class TaskInput extends React.Component {
       <>
         <form onSubmit={handleSubmit}>
           <input type="text" 
-          placeholder="add tasks here"
+          placeholder="add tasks here" required
           value={item}
           onChange={handleChange}
           />
