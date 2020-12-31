@@ -1,0 +1,133 @@
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Buxton Sketch';
+    margin:0;
+    padding:0; background:url("https://i.pinimg.com/originals/6b/e6/d9/6be6d978e3c631d2d011f0c6b7f1cb06.png") no-repeat center center fixed;
+    z-index:1;
+    }
+
+    .content{
+    display:block;
+    margin:10px auto;
+    width:600px;
+    border-width:6px 4px 6px 6px;
+    border-style:double;
+    border-color:purple;
+    box-shadow:2px 2px 4px 2px purple;
+    
+    }
+   
+    form {
+    width:500px;
+    display:block;
+    font-family:'Buxton Sketch';
+    font-size:20px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    padding:5px;
+    border-bottom:2px solid purple;
+    border-top:2px solid purple;
+    border-left:none;
+    border-right:none;
+    }
+    
+    button {
+    font-family:'Buxton Sketch';
+    font-size:25px;
+    width:10rem;
+    padding:12px;
+    margin: 0 auto;
+    display:inline-block;
+    margin : auto ;
+    color:whitesmoke;
+    background-color:purple;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    }
+
+    .text {
+        font-family:'Buxton Sketch';
+        font-size:25px;
+        width:100%;
+        padding:12px;
+        margin: 0 auto;
+        display:block;
+        margin : auto ;
+        color:black;
+        background-color:whitesmoke;
+        font-size: 16px;
+        border-radius: 8px;
+        padding: 8px 16px;
+        cursor: pointer;
+        }
+    
+    h1, h3{
+    text-align:center;
+    display:block;
+    font-size:1.2em;
+    font-style:italic;
+    margin-top:50px;
+    color:purple;
+    }
+
+    h1 {
+        text-align:center;
+        display:block;
+        font-size:4em;
+        font-style:italic;
+        margin-top:50px;
+        color:purple;
+        }
+        
+    
+    .list li{
+    list-style:none;
+    font-size:20px;
+    font-weight:600;
+    color:purple;
+    padding:12px;
+    margin: 0 auto;
+    display:block;
+    border-bottom:2px solid purple;
+    }
+    
+    .list li:hover{
+    margin: 0 auto;
+    border:4px dashed purple;
+    background-color:whitesmoke;
+    }
+    
+    .delete{
+    display:block;
+    cursor:pointer;
+    float:right;
+    padding:4px;
+    margin-right: 30px;
+    margin-top: -20px;
+    border:2px solid purple;
+    border-radius:20%;
+    }
+    
+    .delete:hover{
+    background-color:purple;
+    color:whitesmoke;
+    }
+
+    button:hover {
+        background-color: rgb(185, 55, 142);
+    }
+    button:active {
+    background-color: rgb(185, 55, 142);
+    }
+    button:focus {
+    outline: 0;
+    }

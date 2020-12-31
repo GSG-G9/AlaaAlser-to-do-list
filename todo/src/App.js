@@ -7,7 +7,7 @@ export default class App extends Component {
   state = {
     tasks: [],
     id: 0,
-    item: uuid(),
+    item: "",
     editItem: false,
   };
   handleChange = (e) => {
@@ -23,7 +23,7 @@ export default class App extends Component {
       title: this.state.item,
       complete: false,
     };
-    console.log(newItem);
+
     const updatedTasks = [...this.state.tasks, newItem];
 
     this.setState({
@@ -46,8 +46,6 @@ export default class App extends Component {
 
     const selectedTask= this.state.tasks.find((item) => item.id === id);
 
-    console.log(selectedTask);
-
     this.setState({
       tasks: filteredTasks,
       item: selectedTask.title,
@@ -60,20 +58,23 @@ export default class App extends Component {
 
   render() {
     return (
-      <>
+      <div className="content">
+        <div className="mainPage">
+
         <TaskInput
           item={this.state.item}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
           editItem={this.state.editItem}
-        />
+          />
         <TaskList
           tasks={this.state.tasks}
           handleDelete={this.handleDelete}
           handleEdit={this.handleEdit}
           
-        />
-      </>
+          />
+          </div>
+      </div>
     );
   }
 }

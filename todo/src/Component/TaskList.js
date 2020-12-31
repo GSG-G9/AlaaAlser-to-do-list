@@ -6,8 +6,7 @@ export default class TaskList extends Component {
     const { tasks, handleDelete, handleEdit } = this.props;
     console.log(this.props.tasks);
     return (
-      <ul>
-        <h3>todo list</h3>
+      <ul className="list">
         {tasks.map((item) => {
           return (
             <TaskItem
