@@ -3,7 +3,7 @@ import TaskItem from './TaskItem'
 
 export default class TaskList extends Component {
   render() {
-    const { tasks } = this.props;
+    const { tasks,handleDelete } = this.props;
     console.log(this.props.tasks);
     return (
       <ul>
@@ -13,6 +13,7 @@ export default class TaskList extends Component {
             <TaskItem
               key={item.id}
               title={item.title}
+              handleDelete={() => handleDelete(item.id)}
             />
           );
         })}

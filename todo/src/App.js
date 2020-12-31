@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import TaskInput from "./Component/TaskInput";
 import TaskList from "./Component/TaskList";
 import { v1 as uuid } from "uuid";
+
+
 export default class App extends Component {
   state = {
     tasks: [],
@@ -20,6 +22,7 @@ export default class App extends Component {
     const newItem = {
       id: this.state.id,
       title: this.state.item,
+      complete: false,
     };
     console.log(newItem);
     const updatedTasks = [...this.state.tasks, newItem];
@@ -32,6 +35,13 @@ export default class App extends Component {
     });
   };
 
+  handleDelete = (id) => {
+    const filteredTasks = this.state.tasks.filter((item) => item.id !== id);
+    this.setState({
+      tasks: filteredTasks,
+    });
+  };
+
   render() {
     return (
       <>
@@ -40,7 +50,7 @@ export default class App extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <TaskList tasks={this.state.tasks} />
+        <TaskList tasks={this.state.tasks} handleDelete={this.handleDelete} />
       </>
     );
   }
