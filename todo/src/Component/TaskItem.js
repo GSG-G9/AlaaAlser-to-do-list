@@ -5,10 +5,10 @@ export default class TaskItem extends Component {
     const { title, handleDelete, handleEdit} = this.props;
 
     return (
-      <li>
-        <h6>{title}</h6>
+      <li className="list">
+        <h3>{title}</h3>
         <button onClick={handleEdit}>Edit</button>
-        <button onClick={handleDelete}>Remove</button>
+        <span  className="delete" onClick={handleDelete}>X</span>
       </li>
     );
   }
