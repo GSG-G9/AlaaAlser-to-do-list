@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import TaskInput from "./Component/TaskInput";
+import TaskList from "./Component/TaskList";
+import { v1 as uuid } from "uuid";
+export default class App extends Component {
+  state = {
+    tasks: [],
+    id: 0,
+    item: uuid(),
+    editItem: false,
+  };
+  handleChange = (e) => {
+    this.setState({
+      item: e.target.value,
+    });
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const newItem = {
+      id: this.state.id,
+      title: this.state.item,
+    };
+    console.log(newItem);
+    const updatedTasks = [...this.state.tasks, newItem];
+
+    this.setState({
+      tasks: updatedTasks,
+      item: "",
+      id: uuid(),
+      editItem: false,
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <TaskInput
+          item={this.state.item}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+        <TaskList tasks={this.state.tasks} />
+      </>
+    );
+  }
 }
-
-export default App;
