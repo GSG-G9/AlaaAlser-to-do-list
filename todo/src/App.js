@@ -3,7 +3,6 @@ import TaskInput from "./Component/TaskInput";
 import TaskList from "./Component/TaskList";
 import { v1 as uuid } from "uuid";
 
-
 export default class App extends Component {
   state = {
     tasks: [],
@@ -42,6 +41,23 @@ export default class App extends Component {
     });
   };
 
+  handleEdit = (id) => {
+    const filteredTasks = this.state.tasks.filter((item) => item.id !== id);
+
+    const selectedTask= this.state.tasks.find((item) => item.id === id);
+
+    console.log(selectedTask);
+
+    this.setState({
+      tasks: filteredTasks,
+      item: selectedTask.title,
+      editItem: true,
+      id: id,
+    });
+  };
+
+
+
   render() {
     return (
       <>
@@ -49,8 +65,14 @@ export default class App extends Component {
           item={this.state.item}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          editItem={this.state.editItem}
         />
-        <TaskList tasks={this.state.tasks} handleDelete={this.handleDelete} />
+        <TaskList
+          tasks={this.state.tasks}
+          handleDelete={this.handleDelete}
+          handleEdit={this.handleEdit}
+          
+        />
       </>
     );
   }
